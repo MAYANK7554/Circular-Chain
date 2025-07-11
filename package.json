@@ -37,6 +37,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "firebase": "^11.10.0"
+    "firebase": "^11.10.0",
+    "serve": "^14.2.4"
   }
 }
