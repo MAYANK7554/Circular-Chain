@@ -1,0 +1,17 @@
+{
+  "name": "circularchain-frontend-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frontend applications for CircularChain",
+  "scripts": {
+    "dev:main": "cd circularchain-frontend && npm run dev",
+    "dev:dashboard": "cd circularchain-dashboard-v2 && npm run dev",
+    "build:main": "cd circularchain-frontend && npm run build",
+    "build:dashboard": "cd circularchain-dashboard-v2 && npm run build",
+    "install:all": "cd circularchain-frontend && npm install && cd ../circularchain-dashboard-v2 && npm install"
+  },
+  "workspaces": [
+    "circularchain-frontend",
+    "circularchain-dashboard-v2"
+  ]
+}
