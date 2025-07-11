@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "769436740555",
+    "project_id": "circular-chain-6769e",
+    "storage_bucket": "circular-chain-6769e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769436740555:android:9fa910028e0396c281a44e",
+        "android_client_info": {
+          "package_name": "com.circularchain.circularchainmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769436740555-6iqf08fqf380l6v3nha12u3pg12kdhu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLiSNXDheh09joKBW6WqFfxuFUglh4m78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769436740555-6iqf08fqf380l6v3nha12u3pg12kdhu2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "769436740555-tjs3lv9te8a3j26039sk953lvvsemllc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.circularchain.circularchainmobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
