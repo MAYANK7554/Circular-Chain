@@ -21,7 +21,7 @@ export default function ScannerScreen() {
     try {
       console.log('Sending request to backend:', { productID: productId });
       
-      const response = await axios.post('http://192.168.1.7:3001/api/returns', {
+      const response = await axios.post('http://167.71.237.249/api/returns', {
         productID: productId
       }, {
         headers: {
