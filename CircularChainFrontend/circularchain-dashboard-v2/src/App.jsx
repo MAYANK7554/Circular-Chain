@@ -40,7 +40,7 @@ function App() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://167.71.237.249:3001/api/returns');
+      const response = await axios.get('http://localhost:3001/api/returns');
       setProducts(response.data);
     } catch (error) { 
       console.error("Error fetching products:", error); 
@@ -91,7 +91,7 @@ function App() {
 
   const handleUpdateStatus = async (productId, newStatus) => {
     try {
-      await axios.put(`http://167.71.237.249:3001/api/returns/${productId}/status`, { newStatus });
+      await axios.put(`http://localhost:3001/api/returns/${productId}/status`, { newStatus });
       toast({ 
         title: "Status Updated", 
         description: `Product marked as ${newStatus}`,
@@ -117,7 +117,7 @@ function App() {
     
     setIsDeleting(true);
     try {
-      await axios.delete(`http://167.71.237.249:3001/api/returns/${deleteProductId}`);
+      await axios.delete(`http://localhost:3001/api/returns/${deleteProductId}`);
       toast({
         title: "Product Deleted",
         description: "Product has been successfully deleted",
