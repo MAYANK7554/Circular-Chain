@@ -1,27 +1,42 @@
-import { Stack } from 'expo-router';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Stack, useRouter } from 'expo-router';
+import { AuthProvider, useAuth } from '../context/AuthContext';
+import { Text, View } from 'react-native';
 
-export default function AppLayout() {
-  // No more login check needed here
+const InitialLayout = () => {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  console.log('InitialLayout render - loading:', loading, 'user:', user);
+
+  useEffect(() => {
+    console.log('InitialLayout useEffect - loading:', loading, 'user:', user);
+    if (!loading) {
+      if (user) {
+        console.log('Redirecting to tabs');
+        router.replace('/(tabs)');
+      } else {
+        console.log('Redirecting to login');
+        router.replace('/login');
+      }
+    }
+  }, [user, loading, router]);
+
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>App Loading...</Text>
+      </View>
+    );
+  }
+
+  return <Stack screenOptions={{ headerShown: false }} />;
+};
+
+export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{
-          headerStyle: { backgroundColor: '#004c91' },
-          headerTintColor: '#fff',
-          headerTitle: 'CircularChain Associate App'
-        }}
-      />
-      <Stack.Screen
-        name="scanner"
-        options={{
-          headerStyle: { backgroundColor: '#004c91' },
-          headerTintColor: '#fff',
-          headerTitle: 'Scan Product QR Code',
-          presentation: 'modal'
-        }}
-      />
-    </Stack>
+    <AuthProvider>
+      <InitialLayout />
+    </AuthProvider>
   );
 }
